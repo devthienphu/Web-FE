@@ -14,11 +14,11 @@ import 'swiper/css/pagination';
 const sliderList = [
     {
     id:1,
-    content :'THE BEST CUISINE AWAITS YOUS',
-    secondaryContent :'Beefsteak',
-    thirContent :'Delicious!',
+    content :'THE PERFECT PETS AWAITS YOUS',
+    secondaryContent :'LABRADOR',
+    thirContent :'So cute!',
     discount :'20% | DISCOUNT UPON',
-    buttonContent:'Register',
+    buttonContent:'Mua ngay',
     image:slide1
     },
   
@@ -63,17 +63,17 @@ const Slider = () => {
                 <div className="flex flex-col md:flex-row pt-16">
                     <div  className="basis-3/4 rounded-lg flex items-center justify-center lg:ml-32">
                         <div className="flex flex-col p-8 lg:p-32">
-                        <h3 className="text-gray-600 p-2">{slider.content}</h3>
+                        <h3 className="text-gray-600 text-green-500 p-2">{slider.content}</h3>
                         <h2 className="font-medium text-5xl p-2">{slider.secondaryContent}</h2>
                         <h2 className="font-bold text-5xl p-2">{slider.thirContent}</h2>
-                        <h3 className="font-bold text-3xl text-green-600 p-4">{slider.discount}</h3>
+                        <h3 className="font-bold text-3xl text-pink-400 p-4">{slider.discount}</h3>
                         <button className="mt-2 ml-2 whitespace-nowrap w-32 inline-flex items-center justify-center 
-                        px-4 py-2 border border-transparent rounded-3xl shadow-sm text-base font-medium text-white bg-green-500 hover:bg-green-600">
+                        px-4 py-2 border border-transparent rounded-3xl shadow-sm text-base font-medium text-white bg-sky-400 hover:bg-sky-500">
                             {slider.buttonContent}</button>
                         </div>
                     </div>
 
-                    <div className="basis-11/12 rounded-lg flex items-center justify-center ">
+                    <div className="basis-11/12 rounded-lg flex items-center justify-center hover:scale-105 ease-in-out duration-300">
                         <img src={slider.image}  className="w-auto lg:mr-32 mt-8"></img>
                     </div>
                 </div>
