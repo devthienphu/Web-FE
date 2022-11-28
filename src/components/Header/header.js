@@ -47,8 +47,6 @@ function classNames(...classes) {
 
 
 const Header = () => {
-    const navigate=useNavigate()
-    const cartItems= 0;
     
 
     return (
@@ -196,14 +194,14 @@ const Header = () => {
                                         
                     {/* Option */}
                     <NavLink to='/' className={({ isActive }) =>
-              			isActive ? "flex flex-row items-center p-2 px-4 rounded-2xl bg-pink-400": "flex flex-row items-center p-2 px-4 rounded-2xl hover:bg-pink-200"
+              			isActive ? "flex flex-row items-center p-2 px-4 rounded-2xl bg-pink-400 text-white": "flex flex-row items-center p-2 px-4 rounded-2xl hover:bg-pink-200"
                     }>
-						<p className="font-bold text-white">Trang chủ</p>
+						<p className="font-bold">Trang chủ</p>
 
 					</NavLink>
 
                     <NavLink to='/pet' className={({ isActive }) =>
-              				isActive ? "flex flex-row items-center p-2 px-4 rounded-2xl bg-pink-400 text-white": "flex flex-row items-center p-2 px-4 rounded-2xl hover:bg-pink-200"
+              			isActive ? "flex flex-row items-center p-2 px-4 rounded-2xl bg-pink-400 text-white": "flex flex-row items-center p-2 px-4 rounded-2xl hover:bg-pink-200"
                     }>
 						<p className="font-bold">Thú cưng</p>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
@@ -212,14 +210,14 @@ const Header = () => {
 					</NavLink>
 
                     <NavLink to='/about' className={({ isActive }) =>
-              			isActive ? "flex flex-row items-center p-2 px-4 rounded-2xl bg-pink-400": "flex flex-row items-center p-2 px-4 rounded-2xl hover:bg-pink-200"
+              			isActive ? "flex flex-row items-center p-2 px-4 rounded-2xl bg-pink-400 text-white": "flex flex-row items-center p-2 px-4 rounded-2xl hover:bg-pink-200"
                     }>
 						<p className="font-bold">Giới thiệu</p>
 
 					</NavLink>
 
                     <NavLink to='/contact' className={({ isActive }) =>
-              			isActive ? "flex flex-row items-center p-2 px-4 rounded-2xl bg-pink-400": "flex flex-row items-center p-2 px-4 rounded-2xl hover:bg-pink-200"
+              			isActive ? "flex flex-row items-center p-2 px-4 rounded-2xl bg-pink-400 text-white": "flex flex-row items-center p-2 px-4 rounded-2xl hover:bg-pink-200"
                     }>
 						<p className="font-bold">Liên hệ</p>
 

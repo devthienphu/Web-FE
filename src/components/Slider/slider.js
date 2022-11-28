@@ -74,7 +74,7 @@ const Slider = () => {
                     </div>
 
                     <div className="basis-11/12 rounded-lg flex items-center justify-center hover:scale-105 ease-in-out duration-300">
-                        <img src={slider.image}  className="w-auto lg:mr-32 mt-8"></img>
+                        <img alt="" src={slider.image}  className="w-auto lg:mr-32 mt-8"></img>
                     </div>
                 </div>
                 </>

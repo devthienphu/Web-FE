@@ -26,7 +26,8 @@ const categories=[
         title:'Phụ kiện',
         color:'indigo',
         image:petCollar,
-    },{
+    },
+    {
         title:'Dịch vụ',
         color:'rose',
         image:petShampoo,
@@ -45,7 +46,7 @@ const Home = () => {
                 <div className="flex flex-row flex-wrap gap-x-8 py-4">
                     {
                         categories.map((cate,key)=>(
-                            <Category cate={cate}/>
+                            <Category key ={key} cate={cate}/>
                         ))
                     }
                 </div>
