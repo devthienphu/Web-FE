@@ -1,17 +1,10 @@
 import { Fragment,useContext } from 'react'
 import { NavLink } from "react-router-dom";
 import { useNavigate } from 'react-router-dom'
-import { Popover, Transition } from '@headlessui/react'
-import {
-    // BookmarkAltIcon,
-    // CursorClickIcon,
-    Bars3Icon,
-    // ViewGridIcon,
-    XMarkIcon,
-    // HomeIcon,
-   
-  } from '@heroicons/react/24/outline'
-
+import { Popover, Transition, Menu } from '@headlessui/react'
+import { Bars3Icon, XMarkIcon} from '@heroicons/react/24/outline'
+import {useEffect,useState,useRef} from 'react'
+import pawprint from '../../img/pawprint.png'
 import logo from '../../img/logo.png'
 
 const solutions = [
@@ -43,128 +36,11 @@ const solutions = [
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
-  }
-
+}
 
 const Header = () => {
-    
 
     return (
-        // <>
-        //     <div className="z-100 flex flex-row justify-between fixed top-0 w-full right-0 left-0 p-3 border-b-2 bg-white z-20">
-        //         <img src={logo} alt="logo" className="h-12 w-12"></img>
-
-
-        //         {/* main navigate button */}
-        //         <div className="flex flex-row gap-x-2">
-        //          <NavLink to='/' className={({ isActive }) =>
-        //       				isActive ? "flex flex-row items-center p-2 rounded-2xl bg-pink-400": "flex flex-row items-center p-2 px-4 rounded-2xl hover:bg-pink-200"
-        //     }		>
-		// 				<p className="font-bold text-white">Trang chủ</p>
-
-		// 			</NavLink>
-
-        //             <NavLink to='/1' className={({ isActive }) =>
-        //       				isActive ? "flex flex-row items-center p-2 rounded-2xl bg-pink-400 text-white": "flex flex-row items-center p-2 px-4 rounded-2xl hover:bg-pink-200"
-        //     }		>
-		// 				<p className="font-bold">Thú cưng</p>
-        //                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
-        //                     <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-        //                 </svg>
-		// 			</NavLink>
-
-        //             <NavLink to='/1' className={({ isActive }) =>
-        //       				isActive ? "flex flex-row items-center p-2 rounded-2xl bg-pink-400 text-white": "flex flex-row items-center p-2 px-4 rounded-2xl hover:bg-pink-200"
-        //     }		>
-		// 				<p className="font-bold">Phụ kiện</p>
-        //                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
-        //                     <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-        //                 </svg>
-		// 			</NavLink>	
-
-        //             <NavLink to='/1' className={({ isActive }) =>
-        //       				isActive ? "flex flex-row items-center p-2 rounded-2xl bg-pink-400 text-white": "flex flex-row items-center p-2 px-4 rounded-2xl hover:bg-pink-200"
-        //     }		>
-		// 				<p className="font-bold">Dịch vụ</p>
-        //                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
-        //                     <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-        //                 </svg>
-		// 			</NavLink>	
-
-        //             <NavLink to='/1' className={({ isActive }) =>
-        //       				isActive ? "flex flex-row items-center p-2 rounded-2xl bg-pink-400 text-white": "flex flex-row items-center p-2 px-4 rounded-2xl hover:bg-pink-200"
-        //     }		>
-		// 				<p className="font-bold">Giới thiệu</p>
-        //                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
-        //                     <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-        //                 </svg>
-		// 			</NavLink>	
-
-        //             <NavLink to='/1' className={({ isActive }) =>
-        //       				isActive ? "flex flex-row items-center p-2 rounded-2xl bg-pink-400 text-white": "flex flex-row items-center p-2 px-4 rounded-2xl hover:bg-pink-200"
-        //     }		>
-		// 				<p className="font-bold">Liên hệ</p>
-        //                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
-        //                     <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-        //                 </svg>
-		// 			</NavLink>	
-
-        //             <Menu as="div" className="relative inline-block text-left px-4	">
-		// 				<div>
-		// 					<Menu.Button className="inline-flex justify-center w-full items-center bg-blue-600 p-3 rounded-full ">
-		// 					<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 fill-white hover:scale-125 ease-in-out duration-150" viewBox="0 0 20 20" fill="currentColor">
-		// 						<path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
-		// 					</svg>
-		// 					</Menu.Button>
-		// 				</div>
-
-		// 				<Transition
-		// 					as={Fragment}
-		// 					enter="transition ease-out duration-100"
-		// 					enterFrom="transform opacity-0 scale-95"
-		// 					enterTo="transform opacity-100 scale-100"
-		// 					leave="transition ease-in duration-75"
-		// 					leaveFrom="transform opacity-100 scale-100"
-		// 					leaveTo="transform opacity-0 scale-95"
-		// 				>
-		// 					<Menu.Items className="origin-top-right absolute p-3 mt-2 w-52 rounded-xl shadow-lg drop-shadow-2xl bg-white ring-1 ring-black ring-opacity-5 focus:outline-none ">
-		// 					<div className="py-1 divide-y divide-slate-100">
-		// 						<Menu.Item>
-		// 						{({ active }) => (
-		// 						<div className="flex flex-row items-center gap-2">
-		// 							<svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-8 text-gray-700" viewBox="0 0 20 20" fill="currentColor">
-		// 								<path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" />
-		// 							</svg>
-		// 							<p className="text-gray-600">Viết blog</p>
-		// 						</div>
-		// 						)}
-		// 						</Menu.Item>
-							
-		// 					</div>
-		// 					</Menu.Items>
-		// 				</Transition>
-		// 			</Menu>
-        //         </div>
-
-        //         {/* Cart and User */}
-        //         <div className="flex flex-row gap-x-2">
-
-        //             <button className="p-3.5 bg-sky-200 rounded-full">
-        //                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6">
-        //                     <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
-        //                 </svg>
-        //                 <p className="absolute px-1.5 ml-6 bg-red-400 text-white text-sm rounded-full ml-2 mt-[-10px]">1</p>
-        //             </button>
-        //             <button className="p-2 bg-sky-200 rounded-full">
-        //                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-8 h-8">
-        //                     <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-        //                 </svg>
-
-        //             </button>
-
-        //         </div>
-        //     </div>
-        // </>
         <>
         <Popover className="relative bg-white">
             <div className="mx-auto px-4 sm:px-6 fixed top-0 right-0 left-0 z-10 bg-white">
@@ -200,14 +76,75 @@ const Header = () => {
 
 					</NavLink>
 
-                    <NavLink to='/pet' className={({ isActive }) =>
-              			isActive ? "flex flex-row items-center p-2 px-4 rounded-2xl bg-pink-400 text-white": "flex flex-row items-center p-2 px-4 rounded-2xl hover:bg-pink-200"
-                    }>
-						<p className="font-bold">Thú cưng</p>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                        </svg>
-					</NavLink>
+                    <Menu as="div" className="relative inline-block text-left px-4	">
+						<div>
+							<Menu.Button className={ "flex flex-row items-center p-2 px-4 rounded-2xl hover:bg-pink-200"}>
+                                 <p className="font-bold">Thú cưng</p>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                    </svg>
+                               
+							</Menu.Button>
+						</div>
+
+						<Transition
+							as={Fragment}
+							enter="transition ease-out duration-100"
+							enterFrom="transform opacity-0 scale-95"
+							enterTo="transform opacity-100 scale-100"
+							leave="transition ease-in duration-75"
+							leaveFrom="transform opacity-100 scale-100"
+							leaveTo="transform opacity-0 scale-95"
+						>
+							<Menu.Items className="origin-top-right absolute p-3 mt-2 w-52 rounded-xl shadow-lg drop-shadow-2xl bg-white ring-1 ring-black ring-opacity-5 focus:outline-none ">
+							<div className="py-1 divide-y divide-slate-100 space-y-1">
+                                <Menu.Item>
+								{({ active }) => (
+                                    <NavLink to='/pet' className={({ isActive }) =>
+                                    isActive ? "flex flex-row items-center gap-2 font-bold text-black bg-yellow-100 rounded-full px-2 p-1": "flex flex-row items-center gap-2 px-2"
+                                }>
+                                    <img className="h-8 w-8" src={pawprint} alt="icon"/>
+									<p className="text-gray-600">Thú cưng</p>
+                                    </NavLink> 
+								)}
+								</Menu.Item>
+
+                                <Menu.Item>
+								{({ active }) => (
+                                    <NavLink to='/about' className={({ isActive }) =>
+                                    isActive ? "flex flex-row items-center gap-2 font-bold text-black bg-yellow-100 rounded-full px-2 p-1": "flex flex-row items-center gap-2 px-2"
+                                }>
+                                    <img className="h-8 w-8" src="https://cdn-icons-png.flaticon.com/512/3737/3737711.png" alt="icon"/>
+									<p className="text-gray-600">Thức ăn</p>
+                                    </NavLink> 
+								)}
+								</Menu.Item>
+
+                                <Menu.Item>
+								{({ active }) => (
+                                    <NavLink to='/about' className={({ isActive }) =>
+                                    isActive ? "flex flex-row items-center gap-2 font-bold text-black bg-yellow-100 rounded-full px-2 p-1": "flex flex-row items-center gap-2 px-2"
+                                }>
+                                    <img className="h-8 w-8" src="https://cdn-icons-png.flaticon.com/512/1650/1650477.png" alt="icon"/>
+									<p className="text-gray-600">Phụ kiện</p>
+                                    </NavLink> 
+								)}
+								</Menu.Item>
+
+                                <Menu.Item>
+								{({ active }) => (
+                                    <NavLink to='/about' className={({ isActive }) =>
+                                    isActive ? "flex flex-row items-center gap-2 font-bold text-black bg-yellow-100 rounded-full px-2 p-1": "flex flex-row items-center gap-2 px-2"
+                                }>
+                                    <img className="h-8 w-8" src="https://cdn-icons-png.flaticon.com/512/3636/3636096.png" alt="icon"/>
+									<p className="text-gray-600">Dịch vụ</p>
+                                    </NavLink> 
+								)}
+								</Menu.Item>
+							</div>
+							</Menu.Items>
+						</Transition>
+					</Menu>
 
                     <NavLink to='/about' className={({ isActive }) =>
               			isActive ? "flex flex-row items-center p-2 px-4 rounded-2xl bg-pink-400 text-white": "flex flex-row items-center p-2 px-4 rounded-2xl hover:bg-pink-200"
