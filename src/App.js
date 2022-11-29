@@ -8,6 +8,8 @@ import Home from './pages/home';
 import Contact from './pages/contact';
 import About from './pages/about';
 import Pet from './pages/pet';
+import Care from './pages/care';
+import Cart from './pages/cart';
 
 function App() {
   return (
@@ -18,6 +20,10 @@ function App() {
           <Route path="/contact" element={<Contact/>}/>
           <Route path="/about" element={<About/>}/>
           <Route path="/pet" element={<Pet/>}/>
+          <Route path="/care" element={<Care/>}/>
+          <Route path="/cart" element={<Cart/>}/>
+
+
 
           <Route path="/" element={<Home/>}/>
 

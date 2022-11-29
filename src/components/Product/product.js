@@ -61,7 +61,7 @@ const Product = () => {
 
     <>
         <div className="product-item">
-            <div className="product-thumb bg-sky-200">
+            <div className="product-thumb bg-sky-50">
                 <a className="d-block" href="product-details.html">
                     <img src={slide5} width="370" height="450" alt="Image-HasTech"/>
                 </a>

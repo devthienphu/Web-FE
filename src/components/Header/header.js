@@ -44,19 +44,7 @@ const Header = () => {
         <>
         <Popover className="relative bg-white">
             <div className="mx-auto px-4 sm:px-6 fixed top-0 right-0 left-0 z-10 bg-white">
-                <div className="flex justify-between items-center border-b-2 border-gray-100 py-4 md:justify-start md:space-x-10">
-                {/* logo web */}
-                <div className="flex justify-start lg:w-0 lg:flex-1">
-                    
-                    <div className="cursor-pointer flex items-center">
-                    <img
-                        className="h-8 ml-3 w-auto sm:h-10"
-                        src={logo}
-                        alt="logo"
-                    />
-                    <span className="font-bold text-2xl px-2 text-blue-600">Anna Pet</span>
-                    </div>
-                </div>
+                <div className="flex justify-between items-center border-b-2 border-gray-100 py-4 md:justify-between md:space-x-10">
 
                 {/* menu button */}
                 <div className="-mr-2 -my-2 md:hidden">
@@ -66,19 +54,20 @@ const Header = () => {
                     </Popover.Button>
                 </div>
 
-                <Popover.Group as="nav" className="hidden md:flex space-x-5">
+                <Popover.Group as="nav" className="hidden md:flex space-x-1 justify-start">
                                         
                     {/* Option */}
+
                     <NavLink to='/' className={({ isActive }) =>
-              			isActive ? "flex flex-row items-center p-2 px-4 rounded-2xl bg-pink-400 text-white": "flex flex-row items-center p-2 px-4 rounded-2xl hover:bg-pink-200"
+              			isActive ? "flex flex-row items-center p-1 px-2 rounded-2xl bg-yellow-200": "flex flex-row items-center p-2 px-4 rounded-2xl hover:bg-pink-200"
                     }>
-						<p className="font-bold">Trang chủ</p>
+						<p className="font-bold text-sm">Trang chủ</p>
 
 					</NavLink>
 
                     <Menu as="div" className="relative inline-block text-left px-4	">
 						<div>
-							<Menu.Button className={ "flex flex-row items-center p-2 px-4 rounded-2xl hover:bg-pink-200"}>
+							<Menu.Button className={ "flex flex-row text-sm items-center p-2 px-4 rounded-2xl hover:bg-yellow-100"}>
                                  <p className="font-bold">Thú cưng</p>
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
@@ -147,43 +136,56 @@ const Header = () => {
 					</Menu>
 
                     <NavLink to='/about' className={({ isActive }) =>
-              			isActive ? "flex flex-row items-center p-2 px-4 rounded-2xl bg-pink-400 text-white": "flex flex-row items-center p-2 px-4 rounded-2xl hover:bg-pink-200"
+              			isActive ? "flex flex-row items-center p-1 px-2 rounded-2xl bg-yellow-200": "flex flex-row items-center p-2 px-4 rounded-2xl hover:bg-yellow-100"
                     }>
-						<p className="font-bold">Giới thiệu</p>
+						<p className="font-bold text-sm">Giới thiệu</p>
 
 					</NavLink>
 
                     <NavLink to='/contact' className={({ isActive }) =>
-              			isActive ? "flex flex-row items-center p-2 px-4 rounded-2xl bg-pink-400 text-white": "flex flex-row items-center p-2 px-4 rounded-2xl hover:bg-pink-200"
+              			isActive ? "flex flex-row items-center p-1 px-2 rounded-2xl bg-yellow-200": "flex flex-row items-center p-2 px-4 rounded-2xl hover:bg-yellow-100"
                     }>
-						<p className="font-bold">Liên hệ</p>
+						<p className="font-bold text-sm">Liên hệ</p>
 
 					</NavLink>
 
                 </Popover.Group>
 
+                {/* logo web */}
+                <div className="flex justify-center lg:w-0 lg:flex-1">
+                    
+                    <div className="cursor-pointer flex flex-col items-center">
+                    <img
+                        className="h-8  w-auto sm:h-10"
+                        src={logo}
+                        alt="logo"
+                    />
+                    <span className="font-bold text-2xl text-gray-900">PetMama</span>
+                    </div>
+                </div>
+                
+                {/* login, cart, search button */}
                 <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0 gap-x-8">
-                    {/* Cart button */}
-                    <button className="p-3.5 bg-sky-200 rounded-full hover:bg-sky-300">
-                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6">
-                             <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
-                         </svg>
-                         <p className="absolute px-1.5 ml-6 bg-red-400 text-white text-sm rounded-full ml-2 mt-[-10px]">1</p>
-                     </button>
-
-                    {/* Login button */}
-                    {/* <a
-                    href="#"
-                    className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-3xl shadow-sm text-base font-medium text-white bg-green-600 hover:bg-green-700"
-                    onClick={()=>{navigate('/Login')}}
-                    >
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
+                    {/* Find button */}
+                    <button className="">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-12 h-12">
+                        <path d="M8.25 10.875a2.625 2.625 0 115.25 0 2.625 2.625 0 01-5.25 0z" />
+                        <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.125 4.5a4.125 4.125 0 102.338 7.524l2.007 2.006a.75.75 0 101.06-1.06l-2.006-2.007a4.125 4.125 0 00-3.399-6.463z" clip-rule="evenodd" />
                     </svg>
 
-                    </a> */}
-                    <button className="p-2 bg-sky-200 rounded-full hover:bg-sky-300">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-8 h-8">
+
+                    </button>
+                    {/* Cart button */}
+                    <button className="p-1 bg-gray-700 rounded-2xl hover:bg-gray-800">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-8 h-8 fill-white">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                        </svg>
+
+                         <p className="absolute px-1.5 ml-6 bg-red-400 text-white text-sm rounded-full ml-3 mt-[-10px]">1</p>
+                     </button>
+                    {/* login button */}
+                    <button className="p-1 bg-gray-700 rounded-2xl hover:bg-gray-800">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-8 h-8 fill-white">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
                          </svg>
 
