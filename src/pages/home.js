@@ -10,6 +10,7 @@ import petFood from '../img/petFood.png';
 import petShampoo from '../img/petShampoo.png';
 import petCollar from '../img/petCollar.png';
 import NewsLetter from '../components/News Letter/newsLetter';
+import {pets} from '../data/data.js'
 
 const categories=[
     {
@@ -53,17 +54,17 @@ const Home = () => {
             </div>
 
             <p className="text-center text-5xl py-8">Top Sale</p>
-
+            
+            {/* product */}
             <div className="flex flex-row flex-wrap gap-8 items-center justify-center">
-                <Product/>
-                <Product/>
-                <Product/>
-                <Product/>
-                <Product/>
-                <Product/>
-                <Product/>
+                {
+                    pets.map((pet)=>(
+                        <Product key={pet.petID} pet={pet}/>
+                    ))
+                }
             </div>
 
+            {/* advertise */}
             <div className="flex flex-row flex-wrap justify-center gap-x-32">
                     <img className="rounded-xl max-w-md object-cover rounded-xl" src="https://petmania.vamtam.com/wp-content/uploads/2022/07/iStock-513048080.png" alt="img"/>
 

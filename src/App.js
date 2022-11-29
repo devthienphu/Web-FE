@@ -10,6 +10,8 @@ import About from './pages/about';
 import Pet from './pages/pet';
 import Care from './pages/care';
 import Cart from './pages/cart';
+import Category from './pages/category';
+
 
 function App() {
   return (
@@ -22,6 +24,7 @@ function App() {
           <Route path="/pet" element={<Pet/>}/>
           <Route path="/care" element={<Care/>}/>
           <Route path="/cart" element={<Cart/>}/>
+          <Route path="/category" element={<Category/>}/>
 
 
 
