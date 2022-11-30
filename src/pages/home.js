@@ -43,10 +43,10 @@ const Home = () => {
 
 
             {/*hot category */}
-            <div className="flex flex-col items-center justify-center py-4 gap-2">
+            <div className="flex flex-col items-center text-center justify-center py-4 gap-2 px-4 ">
                 <p className="font-extrabold text-4xl">Trending</p>
-                <p className="">We look after your little family, we ensure that we will give the best treatment for your little family</p>
-                <div className="flex flex-row flex-wrap gap-x-20 py-4">
+                <p className="text-xl md:text-lg">We look after your little family, we ensure that we will give the best treatment for your little family</p>
+                <div className="flex flex-row flex-wrap gap-x-20 gap-y-8 py-4 justify-center">
                     <div className="flex flex-col items-center gap-y-4">
                         <img className="rounded-[120px] max-w-[350px] hover:scale-105 ease-in duration-300" src="https://petmania.vamtam.com/wp-content/uploads/2022/07/iStock-1271793136.jpg" alt="img"/>
                         <p className="text-3xl font-extrabold">Phụ kiện</p>
@@ -74,14 +74,14 @@ const Home = () => {
             </div>
 
             {/* advertise */}
-            <div className="flex flex-row flex-wrap justify-center gap-x-32">
-                    <img className="rounded-xl max-w-md object-cover rounded-xl" src="https://petmania.vamtam.com/wp-content/uploads/2022/07/iStock-513048080.png" alt="img"/>
+            <div className="flex flex-row flex-wrap justify-center gap-x-32 text-center px-4 pt-16">
+                    <img className="rounded-xl md:max-w-md maw-w-[200px] object-cover rounded-xl" src="https://petmania.vamtam.com/wp-content/uploads/2022/07/iStock-513048080.png" alt="img"/>
 
                     <div className="flex flex-col my-auto gap-y-4">
                         <p className="font-extrabold text-4xl max-w-[450px] text-center">Your <b className="text-yellow-400">favorite</b> pet food & supplies store</p>
-                        <p className="max-w-[450px]">Our Impact comes from our commitment to our customers and to our rescue parters. We pledge to aid in animal rescue efforts, from hosting in-store adoption events & fundraisers, to making donations as our resources allow. We are personally committed to helping animals in need.</p>
+                        <p className="max-w-[450px] text-lg md:text-normal">Our Impact comes from our commitment to our customers and to our rescue parters. We pledge to aid in animal rescue efforts, from hosting in-store adoption events & fundraisers, to making donations as our resources allow. We are personally committed to helping animals in need.</p>
                     </div>
-            </div> 
+            </div>  
                     
             <NewsLetter/>
 

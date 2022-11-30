@@ -12,24 +12,43 @@ const solutions = [
     name: 'Trang chủ',
     description: 'Get a better understanding of where your traffic is coming from.',
     href: '/',
-    icon: Bars3Icon
+    icon: 'https://cdn-icons-png.flaticon.com/512/1946/1946488.png'
 },
 {
     name: 'Thú cưng',
     description: 'Speak directly to your customers in a more meaningful way.',
-    href: '/Menu',
-    icon: Bars3Icon,
+    href: '/pet',
+    icon:'https://cdn-icons-png.flaticon.com/512/1076/1076877.png',
+},
+{
+    name: 'Thức ăn',
+    description: 'Speak directly to your customers in a more meaningful way.',
+    href: '/petFood',
+    icon: 'https://cdn-icons-png.flaticon.com/512/3737/3737711.png',
+},
+{
+    name: 'Phụ kiện',
+    description: 'Speak directly to your customers in a more meaningful way.',
+    href: '/petProduct',
+    icon: 'https://cdn-icons-png.flaticon.com/512/1871/1871629.png',
+},
+{
+    name: 'Dịch vụ',
+    description: 'Speak directly to your customers in a more meaningful way.',
+    href: '/petService',
+    icon: 'https://cdn-icons-png.flaticon.com/512/2138/2138261.png',
 },
 { 
     name: 'Giới thiệu', 
     description: "Your customers' data will be safe and secure.", 
     href: '/About', 
-    icon: Bars3Icon },
+    icon: 'https://cdn-icons-png.flaticon.com/512/3356/3356068.png' 
+},
 {
     name: 'Liên hệ',
     description: "Connect with third-party tools that you're already using.",
     href: '/Contact',
-    icon: Bars3Icon,
+    icon: 'https://cdn-icons-png.flaticon.com/512/1034/1034153.png',
 },
 
 ]
@@ -46,13 +65,6 @@ const Header = () => {
             <div className="mx-auto px-4 sm:px-6 fixed top-0 right-0 left-0 z-10 bg-white">
                 <div className="flex justify-between items-center border-b-2 border-gray-100 py-4 md:justify-between md:space-x-10">
 
-                {/* menu button */}
-                <div className="-mr-2 -my-2 md:hidden">
-                    <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-                    <span className="sr-only">Open menu</span>
-                    <Bars3Icon className="h-6 w-6" aria-hidden="true" />
-                    </Popover.Button>
-                </div>
 
                 <Popover.Group as="nav" className="hidden md:flex space-x-1 justify-start">
                                         
@@ -162,6 +174,14 @@ const Header = () => {
                     <span className="font-bold text-2xl text-gray-900">PetMama</span>
                     </div>
                 </div>
+
+                 {/* menu button */}
+                 <div className="-mr-2 -my-2 md:hidden">
+                    <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                    <span className="sr-only">Open menu</span>
+                    <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+                    </Popover.Button>
+                </div>
                 
                 {/* login, cart, search button */}
                 <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0 gap-x-8">
@@ -172,7 +192,7 @@ const Header = () => {
                             <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                                 <svg aria-hidden="true" class="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
                             </div>
-                            <input type="text" id="simple-search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5" placeholder="Search" required/>
+                            <input type="text" id="simple-search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-full focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5" placeholder="Search" required/>
                         </div>
                         <button className="">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-12 h-12">
@@ -214,54 +234,56 @@ const Header = () => {
                 <Popover.Panel focus className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
                 <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50 ">
                     <div className="pt-5 pb-6 px-5">
-                    <div className="flex items-center justify-between">
-                        <div>
-                        <img
-                            className="h-8 w-auto"
-                            src="https://www.pinclipart.com/picdir/big/86-862588_mobi-food-logo-gif-clipart.png"
-                            alt="Workflow"
-                        />
+                        <div className="flex items-center justify-between">
+                            <div>
+                            <img
+                                className="h-8 w-auto"
+                                src={logo}
+                                alt="logo"
+                            />
+                            </div>
+                            <div className="-mr-2">
+                            <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                                <span className="sr-only">Close menu</span>
+                                <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+                            </Popover.Button>
+                            </div>
                         </div>
-                        <div className="-mr-2">
-                        <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-                            <span className="sr-only">Close menu</span>
-                            <XMarkIcon className="h-6 w-6" aria-hidden="true" />
-                        </Popover.Button>
+                        
+                        {/* mobile navigate */}
+                        <div className="mt-6">
+                            <nav className="grid gap-y-8">
+                            {solutions.map((item) => (
+                                <a
+                                key={item.name}
+                                href={item.href}
+                                className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
+                                >
+                                <img src={item.icon} alt="icon" className="w-6 h-6"/>
+                                <span className="ml-3 text-base font-medium text-gray-900">{item.name}</span>
+                                </a>
+                            ))}
+                            </nav>
                         </div>
                     </div>
-                    <div className="mt-6">
-                        <nav className="grid gap-y-8">
-                        {solutions.map((item) => (
-                            <a
-                            key={item.name}
-                            href={item.href}
-                            className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
-                            >
-                            <item.icon className="flex-shrink-0 h-6 w-6 text-indigo-600" aria-hidden="true" />
-                            <span className="ml-3 text-base font-medium text-gray-900">{item.name}</span>
-                            </a>
-                        ))}
-                        </nav>
-                    </div>
-                    </div>
+
+                    {/* login */}
                     <div className="py-6 px-5 space-y-6">
-                    
-                    <div>
-                        <a
-                        href="#"
-                        className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-green-600 hover:bg-green-700"
-                        >
-                        Sign up
-                        </a>
+                        <div>
+                            <a
+                            href="signUp"
+                            className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-sky-400 hover:bg-sky-500"
+                            >
+                            Sign up
+                            </a>
 
-                        <p className="mt-6 text-center text-base font-medium text-gray-500">
-                        Existing customer?{' '}
-                        <a href="#" className="text-indigo-600 hover:text-indigo-500">
-                            Sign in
-                        </a>
-                        </p>
-                    </div>
-
+                            <p className="mt-6 text-center text-base font-medium text-gray-500">
+                            Existing customer?{' '}
+                            <a href="signIN" className="text-indigo-600 hover:text-indigo-500">
+                                Sign in
+                            </a>
+                            </p>
+                        </div>
                     </div>
                 </div>
                 </Popover.Panel>

@@ -88,7 +88,7 @@ const PetProduct = ({data}) => {
             <div className="flex flex-col mx-auto gap-y-4 justify-center items-center">
             <p className="text-2xl font-extrabold ">Related products</p>
 
-            <div className="flex flex-row flex-wrap gap-x-8 mx-auto justify-center ">
+            <div className="flex flex-row flex-wrap gap-x-8 gap-y-8 mx-auto justify-center ">
 
                 {
                     relatedPrd.map((product,key)=>(

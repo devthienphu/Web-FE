@@ -3,7 +3,7 @@ import React from 'react';
 const NewsLetter = () => {
     return (
         <> 
-               <div className="flex flex-col gap-y-2 m-auto bg-gradient-to-r from-sky-100 to-pink-200 w-fit p-16 px-72 rounded-xl mt-8">
+               <div className="hidden lg:flex flex-col gap-y-2 m-auto bg-gradient-to-r from-sky-100 to-pink-200 w-fit p-16 px-72 rounded-xl mt-8">
                     <p className="text-5xl font-semibold">Join With Us</p>
                     <p >Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam.</p>
                     <div className="flex flex-row">
