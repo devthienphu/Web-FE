@@ -75,7 +75,7 @@ const Home = () => {
 
             {/* advertise */}
             <div className="flex flex-row flex-wrap justify-center gap-x-32 text-center px-4 pt-16">
-                    <img className="rounded-xl md:max-w-md maw-w-[200px] object-cover rounded-xl" src="https://petmania.vamtam.com/wp-content/uploads/2022/07/iStock-513048080.png" alt="img"/>
+                    <img className="rounded-xl md:max-w-md maw-w-[80px] object-cover rounded-xl" src="https://petmania.vamtam.com/wp-content/uploads/2022/07/iStock-513048080.png" alt="img"/>
 
                     <div className="flex flex-col my-auto gap-y-4">
                         <p className="font-extrabold text-4xl max-w-[450px] text-center">Your <b className="text-yellow-400">favorite</b> pet food & supplies store</p>

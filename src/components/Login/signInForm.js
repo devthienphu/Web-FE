@@ -7,7 +7,7 @@ const SignInForm = () => {
 
     return (
         <>
-             <section className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0 ">
+             <section className="flex flex-col items-center justify-center px-6 py-8 mx-auto h-screen lg:py-0 ">
                         {/* Logo shop */}
                         <div onClick={()=>(navigate('/'))} className="flex items-center mb-6 text-2xl font-semibold text-gray-900">
                             <img className="w-8 h-8 mr-2" src={logo} alt="logo"/>

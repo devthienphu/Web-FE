@@ -7,14 +7,14 @@ const About = () => {
         <>
             <Header/>
 
-            <div className="flex flex-col gap-y-16 pt-32">
+            <div className="flex flex-col gap-y-16 pt-32 px-4">
                  <p className="text-5xl font-extrabold text-center">About us</p>
 
                 {/* about 1 */}
-                <div className="flex flex-row flex-wrap gap-x-48  justify-center ">
+                <div className="flex flex-row flex-wrap gap-x-48 gap-y-8 justify-center ">
                      <div className="flex flex-col my-auto gap-y-4">
                         <p className="font-extrabold text-2xl">Who We Are</p>
-                        <p className="max-w-[450px]">PetMania is a specialty shop offering a curated selection of quality pet products. With both brick-and-mortar and online shops, PetMania focuses on independent designers and contemporary collections thoughtfully crafted to blend seamlessly with your personal style.</p>
+                        <p className="max-w-[450px] text-xl md:text-lg">PetMania is a specialty shop offering a curated selection of quality pet products. With both brick-and-mortar and online shops, PetMania focuses on independent designers and contemporary collections thoughtfully crafted to blend seamlessly with your personal style.</p>
                     </div>
                     <div>
                         <img className="w-[605px] h-[280px] object-cover rounded-xl" src="https://petmania.vamtam.com/wp-content/uploads/2022/07/iStock-1308557657.jpg" alt="img"/>
@@ -33,11 +33,11 @@ const About = () => {
 
                 {/* about 2 */}
 
-                <div className="flex flex-row flex-wrap gap-x-48 justify-center pt-16">
+                <div className="flex flex-row md:flex-wrap gap-x-48 gap-y-8 justify-center md:pt-16 pt-8 flex-wrap-reverse">
                     <img className="w-[605px] h-[280px] object-cover rounded-xl" src="https://petmania.vamtam.com/wp-content/uploads/2022/07/istockphoto-1134929522-2048x2048-1.jpg" alt="img"/>
                     <div className="flex flex-col my-auto gap-y-4">
                         <p className="font-extrabold text-2xl">Our Impact</p>
-                        <p className="max-w-[450px]">Our Impact comes from our commitment to our customers and to our rescue parters. We pledge to aid in animal rescue efforts, from hosting in-store adoption events & fundraisers, to making donations as our resources allow. We are personally committed to helping animals in need.</p>
+                        <p className="max-w-[450px] text-xl md:text-lg">Our Impact comes from our commitment to our customers and to our rescue parters. We pledge to aid in animal rescue efforts, from hosting in-store adoption events & fundraisers, to making donations as our resources allow. We are personally committed to helping animals in need.</p>
                     </div>
                 </div> 
 
