@@ -12,7 +12,7 @@ import Care from './pages/care';
 import Cart from './pages/cart';
 import Category from './pages/category';
 import PetProduct from './pages/petProduct';
-import {petFoods,petServices,petProducts} from './data/data'
+import {pets,petFoods,petServices,petProducts} from './data/data'
 
 
 
@@ -26,15 +26,15 @@ function App() {
           <Route path="/about" element={<About/>}/>
 
           <Route path="/pet" element={<Pet/>}/>
-          <Route path="/pet/:id" element={<PetProduct data={petProducts}/>}/>
+          <Route path="/pet/:id" element={<PetProduct data={pets}/>}/>
 
-          <Route path="/petFood" element={<Category name="Thức ăn cho thú cưng" data={petFoods}/>}/>
+          <Route path="/petFood" element={<Category href="petFood" name="Thức ăn cho thú cưng" data={petFoods}/>}/>
           <Route path="/petFood/:id" element={<PetProduct data={petFoods}/>}/>
           
           <Route path="/petService" element={<Category href="petService" name="Dịch vụ" data={petServices}/>}/>
           <Route path="/petService/:id" element={<PetProduct data={petServices}/>}/>
 
-          <Route path="/petProduct" element={<Category name="Sản phẩm cho thú cưng" data={petProducts}/>}/>
+          <Route path="/petProduct" element={<Category href="petProduct" name="Sản phẩm cho thú cưng" data={petProducts}/>}/>
           <Route path="/petProduct/:id" element={<PetProduct data={petProducts}/>}/>
 
 

@@ -1,11 +1,15 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom'
+
 import '../../scss/_product.scss'
 
 import slide5 from '../../img/slide5.png'
 const Product = ({pet}) => {
+    const navigate=useNavigate();
     return (
+        
     <>
-        <div className="product-item">
+        <div className="product-item" onClick={()=>{navigate(`/pet/${pet.petID}`)}}>
             <div className="product-thumb bg-sky-50">
                 
                 <img className="max-w-[370px] max-h-[420px]" src={pet.imageUrl} width="370" height="450" alt="Image-HasTech"/>

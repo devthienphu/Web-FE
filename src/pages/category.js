@@ -2,7 +2,7 @@ import React from 'react';
 import Footer from '../components/Footer/footer';
 import Header from '../components/Header/header';
 import RelatedProduct from '../components/Product/relatedProduct';
-import { petProducts } from '../data/data';
+
 
 const Category = ({href,name,data}) => {
     return (

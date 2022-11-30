@@ -29,7 +29,7 @@ const PetProduct = ({data}) => {
         <div className="flex flex-col gap-y-32 pt-40">
             {/* products */}
             <div className="flex flex-row flex-wrap mx-auto gap-x-32 justify-center">
-                <img className="max-w-lg rounded-xl" src={result.imageUrl} alt="prd"/>
+                <img className="max-w-lg rounded-xl max-h-[550px]" src={result.imageUrl} alt="prd"/>
                 <div className="flex flex-col ">
                     <div className="p-4">
                         <p className="font-extrabold text-3xl">{result.name}</p>
