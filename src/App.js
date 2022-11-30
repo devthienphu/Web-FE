@@ -11,6 +11,9 @@ import Pet from './pages/pet';
 import Care from './pages/care';
 import Cart from './pages/cart';
 import Category from './pages/category';
+import PetProduct from './pages/petProduct';
+import {petFoods,petServices,petProducts} from './data/data'
+
 
 
 function App() {
@@ -22,9 +25,17 @@ function App() {
           <Route path="/contact" element={<Contact/>}/>
           <Route path="/about" element={<About/>}/>
           <Route path="/pet" element={<Pet/>}/>
-          <Route path="/care" element={<Care/>}/>
+          <Route path="/petFood" element={<Category name="Thức ăn cho thú cưng" data={petFoods}/>}/>
+          <Route path="/petService" element={<Category name="Dịch vụ" data={petServices}/>}/>
+          <Route path="/petProduct" element={<Category name="Sản phẩm cho thú cưng" data={petProducts}/>}/>
+
+
+
+          {/* <Route path="/care" element={<Care/>}/> */}
           <Route path="/cart" element={<Cart/>}/>
           <Route path="/category" element={<Category/>}/>
+          <Route path="/product/:id" element={<PetProduct/>}/>
+
 
 
 

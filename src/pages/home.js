@@ -41,15 +41,24 @@ const Home = () => {
             <Header/>
             <Slider/>
 
+
+            {/*hot category */}
             <div className="flex flex-col items-center justify-center py-4 gap-2">
-                <p className="font-extrabold text-4xl "> What we can do</p>
+                <p className="font-extrabold text-4xl">Trending</p>
                 <p className="">We look after your little family, we ensure that we will give the best treatment for your little family</p>
-                <div className="flex flex-row flex-wrap gap-x-8 py-4">
-                    {
-                        categories.map((cate,key)=>(
-                            <Category key ={key} cate={cate}/>
-                        ))
-                    }
+                <div className="flex flex-row flex-wrap gap-x-20 py-4">
+                    <div className="flex flex-col items-center gap-y-4">
+                        <img className="rounded-[120px] max-w-[350px] hover:scale-105 ease-in duration-300" src="https://petmania.vamtam.com/wp-content/uploads/2022/07/iStock-1271793136.jpg" alt="img"/>
+                        <p className="text-3xl font-extrabold">Phụ kiện</p>
+                    </div>
+                    <div className="flex flex-col items-center gap-y-4">
+                        <img className="rounded-[120px] max-w-[350px] hover:scale-105 ease-in duration-300" src="https://petmania.vamtam.com/wp-content/uploads/2022/07/iStock-1398781665.jpg" alt="img"/>
+                        <p className="text-3xl font-extrabold">Dịch vụ</p>
+                    </div>
+                    <div className="flex flex-col items-center gap-y-4">
+                        <img className="rounded-[120px] max-w-[350px] hover:scale-105 ease-in duration-300" src="https://petmania.vamtam.com/wp-content/uploads/2022/07/iStock-1140125261.jpg" alt="img"/>
+                        <p className="text-3xl font-extrabold">Thức ăn</p>
+                    </div>
                 </div>
             </div>
 

@@ -176,13 +176,5 @@ export const petProducts=[
         quantity:100,
         discountedPrice:null
     },
-    {
-        petProductID:5,
-        name:'Áo AmBaby 4 chân',
-        unitPrice:130000,
-        imageUrl:'https://matpetfamily.com/wp-content/uploads/2020/07/kiotviet_e9850a2f574050228375c3e7b7a22803-300x300.jpeg',
-        category:'Phụ kiện thú cưng',
-        quantity:100,
-        discountedPrice:null
-    },
+
 ];

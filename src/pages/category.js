@@ -2,23 +2,19 @@ import React from 'react';
 import Footer from '../components/Footer/footer';
 import Header from '../components/Header/header';
 import RelatedProduct from '../components/Product/relatedProduct';
+import { petProducts } from '../data/data';
 
-const Category = () => {
+const Category = ({name,data}) => {
     return (
        <>
         <Header/>
-            <p className="font-extrabold text-3xl text-center pt-44 pb-8">Food</p>
+            <p className="font-extrabold text-3xl text-center pt-44 pb-8">{name}</p>
             <div className="flex flex-row flex-wrap gap-4 justify-center">
-                <RelatedProduct/>
-                <RelatedProduct/>
-                <RelatedProduct/>
-                <RelatedProduct/>
-                <RelatedProduct/>
-                <RelatedProduct/>
-                <RelatedProduct/>
-                <RelatedProduct/>
-                <RelatedProduct/>
-                <RelatedProduct/>
+                {
+                    data.map((product,key)=>(
+                        <RelatedProduct product={product} key={key}/>
+                    ))
+                }
 
             </div>
         <Footer/>

@@ -100,7 +100,7 @@ const Header = () => {
 
                                 <Menu.Item>
 								{({ active }) => (
-                                    <NavLink to='/about' className={({ isActive }) =>
+                                    <NavLink to='/petFood' className={({ isActive }) =>
                                     isActive ? "flex flex-row items-center gap-2 font-bold text-black bg-yellow-100 rounded-full px-2 p-1": "flex flex-row items-center gap-2 px-2"
                                 }>
                                     <img className="h-8 w-8" src="https://cdn-icons-png.flaticon.com/512/3737/3737711.png" alt="icon"/>
@@ -111,7 +111,7 @@ const Header = () => {
 
                                 <Menu.Item>
 								{({ active }) => (
-                                    <NavLink to='/about' className={({ isActive }) =>
+                                    <NavLink to='/petProduct' className={({ isActive }) =>
                                     isActive ? "flex flex-row items-center gap-2 font-bold text-black bg-yellow-100 rounded-full px-2 p-1": "flex flex-row items-center gap-2 px-2"
                                 }>
                                     <img className="h-8 w-8" src="https://cdn-icons-png.flaticon.com/512/1650/1650477.png" alt="icon"/>
@@ -122,7 +122,7 @@ const Header = () => {
 
                                 <Menu.Item>
 								{({ active }) => (
-                                    <NavLink to='/about' className={({ isActive }) =>
+                                    <NavLink to='/petService' className={({ isActive }) =>
                                     isActive ? "flex flex-row items-center gap-2 font-bold text-black bg-yellow-100 rounded-full px-2 p-1": "flex flex-row items-center gap-2 px-2"
                                 }>
                                     <img className="h-8 w-8" src="https://cdn-icons-png.flaticon.com/512/3636/3636096.png" alt="icon"/>
@@ -173,7 +173,6 @@ const Header = () => {
                         <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.125 4.5a4.125 4.125 0 102.338 7.524l2.007 2.006a.75.75 0 101.06-1.06l-2.006-2.007a4.125 4.125 0 00-3.399-6.463z" clip-rule="evenodd" />
                     </svg>
 
-
                     </button>
                     {/* Cart button */}
                     <button className="p-1 bg-gray-700 rounded-2xl hover:bg-gray-800" onClick={()=>{ navigate("/cart");}}>
@@ -184,7 +183,7 @@ const Header = () => {
                          <p className="absolute px-1.5 ml-6 bg-red-400 text-white text-sm rounded-full ml-3 mt-[-10px]">1</p>
                      </button>
                     {/* login button */}
-                    <button className="p-1 bg-gray-700 rounded-2xl hover:bg-gray-800">
+                    <button className="p-1 bg-gray-700 rounded-2xl hover:bg-gray-800" onClick={()=>{ navigate("/signIn");}}>
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-8 h-8 fill-white">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
                          </svg>
