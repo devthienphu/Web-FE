@@ -65,14 +65,13 @@ const Header = () => {
 
 					</NavLink>
 
-                    <Menu as="div" className="relative inline-block text-left px-4	">
+                    <Menu as="div" className="relative inline-block text-left px-4">
 						<div>
-							<Menu.Button className={ "flex flex-row text-sm items-center p-2 px-4 rounded-2xl hover:bg-yellow-100"}>
+							<Menu.Button className="flex flex-row text-sm items-center p-2 px-4 rounded-2xl hover:bg-yellow-100">
                                  <p className="font-bold">Thú cưng</p>
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                                     </svg>
-                               
 							</Menu.Button>
 						</div>
 

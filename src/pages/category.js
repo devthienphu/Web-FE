@@ -4,7 +4,7 @@ import Header from '../components/Header/header';
 import RelatedProduct from '../components/Product/relatedProduct';
 import { petProducts } from '../data/data';
 
-const Category = ({name,data}) => {
+const Category = ({href,name,data}) => {
     return (
        <>
         <Header/>
@@ -12,7 +12,7 @@ const Category = ({name,data}) => {
             <div className="flex flex-row flex-wrap gap-4 justify-center">
                 {
                     data.map((product,key)=>(
-                        <RelatedProduct product={product} key={key}/>
+                        <RelatedProduct href={href} product={product} key={key}/>
                     ))
                 }
 

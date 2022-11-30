@@ -3,13 +3,13 @@ import { useNavigate } from 'react-router-dom'
 
 import heartIcon from '../../img/heartIcon.png'
 
-const RelatedProduct = ({product}) => {
+const RelatedProduct = ({href,product}) => {
     const navigate=useNavigate();
 
     return (
         <>
             <div className="product-item flex flex-col relative gap-y-2 rounded-xl border border-gray-300 max-w-[350px] p-3 cursor-pointer hover:shadow-lg"
-                onClick={()=>{navigate(`/Product/${product.petFoodID || product.petServiceID || product.petProductID}`)}}>
+                onClick={()=>{navigate(`/${href}/${product.petFoodID || product.petServiceID || product.petProductID}`)}}>
                 <div className="flex flex-row justify-end">
                     <img className="w-5 h-5 cursor-pointer " src={heartIcon} alt="icon"/>
                 </div>

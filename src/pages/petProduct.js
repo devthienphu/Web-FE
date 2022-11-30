@@ -9,16 +9,17 @@ import RelatedProduct from '../components/Product/relatedProduct';
 import {petProducts} from '../data/data'
 
 
-const PetProduct = () => {
+const PetProduct = ({data}) => {
 
     const {id} = useParams();
     const prdID=id;
-    let result = petProducts.find( ({ petProductID }) => petProductID === parseInt(prdID) );
-
+    let result = data.find( ({ petProductID }) => petProductID === parseInt(prdID) ) || data.find( ({ petServiceID }) => petServiceID === parseInt(prdID) ) || data.find( ({ petFoodID }) => petFoodID === parseInt(prdID) ) || data.find( ({ petID }) => petID === parseInt(prdID) ) ;
+    // let result = data[0];
+    // let result = data.find(element => element.petProductID ===prdID)
     let relatedPrd=[];
 
     for(var i=0;i<4;i++){
-        relatedPrd.push(petProducts[i]);
+        relatedPrd.push(data[i]);
     }
 
     return (
@@ -46,7 +47,7 @@ const PetProduct = () => {
 
             {/* benefits */}
             {
-                (petProducts.category)? 
+                (data.category)? 
                 <div className="flex flex-row flex-wrap justify-between px-32">
                 <div className="flex flex-col max-w-sm gap-y-4">
                     <p className="font-extrabold text-2xl">Benefits</p>
