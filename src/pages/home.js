@@ -36,12 +36,13 @@ const categories=[
 ]
 
 const Home = () => {
+
+   
+
     return (
         <>
             <Header/>
             <Slider/>
-
-
             {/*hot category */}
             <div className="flex flex-col items-center text-center justify-center py-4 gap-2 px-4 ">
                 <p className="font-extrabold text-4xl">Trending</p>
