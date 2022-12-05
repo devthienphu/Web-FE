@@ -7,16 +7,16 @@ const Contact = () => {
         <>
             <Header/>
             <div className="flex flex-col gap-y-12 justify-center pt-48 items-center p-4">
-                <p className="text-5xl font-extrabold">Contact us</p>
-                <p className="text-center text-xl md:lg">We’d love to hear from you – please use the form to send us your message or ideas. Or simply pop <br/> in for a cup of fresh tea and a cookie:</p>
+                <p className="text-5xl font-extrabold">Liên hệ</p>
+                <p className="text-center text-xl md:lg">Thật tuyệt vời khi chúng tôi nhận được những lời nhắn từ bạn <br/> hãy liên hệ ngay với chúng tôi để được trải nghiệm dịch vụ tốt nhất</p>
                 <div className="flex flex-row flex-wrap divide-x-2 gap-x-8 text-lg md:text-normal">
                     <div className="flex flex-col pl-4 mx-auto">
-                        <p>PetMania, 1000S 8th</p>
-                        <p>Avenue, NY, NY  10019</p>
+                        <p>PetMania, 2015 - 2022</p>
+                        <p>Quận 10 - Lý thường Kiệt</p>
                     </div>
                     <div className="flex flex-col pl-6 mx-auto">
-                        <p><b>Call us:</b> 1-800-356-8933</p>
-                        <p><b>Email:</b> info@petmania.com</p>
+                        <p><b>Số điện thoại:</b> 1900 - 8910 - JQK</p>
+                        <p><b>Email:</b> info@petmama.com</p>
                     </div>
 
                 </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import {useContext} from 'react'
+import {useContext,useEffect,useState} from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import Footer from '../components/Footer/footer';
@@ -7,6 +7,7 @@ import Header from '../components/Header/header';
 import CartPrd from '../components/Product/cartPrd';
 import wishlist from '../img/wishlist.png';
 import { AddContext } from '../App';
+import {createOrder} from '../api/userApi'
 
 const cart =[
     {
@@ -50,8 +51,13 @@ const cart =[
 
 const Cart = ({onRemove}) => {
 
-    const cartItems= useContext(AddContext);
+    const [payment, setPayment] = useState('');
+    const {cartItems,order}= useContext(AddContext);
     const navigate = useNavigate();
+    
+    const handleChange = event => {
+        setPayment(event.target.value);
+      };
 
     return (
        <>
@@ -59,11 +65,11 @@ const Cart = ({onRemove}) => {
                 <div className="pt-32">
                     {
                     (cartItems.length ===0)?<div className="flex flex-col text-center justify-center items-center gap-y-4">
-                        <p className="font-extrabold text-4xl text-black">Cart</p>
-                        <p>There are no products on the Cart!</p>
+                        <p className="font-extrabold text-4xl text-black">Giỏ hàng</p>
+                        <p>Chưa có sản phẩm nào trong giỏ hàng!</p>
                         <img className="ml-8 max-w-[200px]" src={wishlist} alt="list"/>
-                        <p>Look for the heart to save favorites while you shop.</p>
-                        <button className="text-white font-semibold bg-gray-700 w-fit rounded-3xl p-2 px-6" onClick={()=>{navigate('/pet')}}>Start shopping</button>
+                        <p>Tìm kiếm sản phẩm yêu thích của bạn và mua ngay nào.</p>
+                        <button className="text-white font-semibold bg-gray-700 w-fit rounded-3xl p-2 px-6" onClick={()=>{navigate('/pet')}}>Mua sắm ngay</button>
                     </div>
                     :<div className="flex flex-col justify-center mx-auto items-center gap-4 pb-40">
                         {
@@ -71,6 +77,19 @@ const Cart = ({onRemove}) => {
                                 <CartPrd onRemove={onRemove} product={product} key={key}/>
                             ))
                         }
+                        <div className="flex flex-row gap-4">
+                            <p className="font-bold text-lg">Phương thức thanh toán:</p>
+                            <input onChange={handleChange} type="radio" id="Momo" name="fav_language" value="Momo"/>
+                            <label class="text-lg font-bold" for="Momo">Momo</label><br></br>
+
+                            <input onChange={handleChange} type="radio" id="direct" name="fav_language" value="direct"/>
+                            <label class="text-lg font-bold" for="direct">Trực tiếp</label><br></br>
+                        </div>
+                        <button className="text-white font-semibold bg-gray-700 w-fit rounded-3xl p-2 px-6" 
+                        onClick={()=>{
+                        navigate('/pet'); 
+                        createOrder(localStorage.getItem('user'),order,payment)}}>Đặt hàng ngay</button>
+                        
                         
                     </div>
                     }

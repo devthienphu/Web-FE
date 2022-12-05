@@ -9,21 +9,21 @@ import Header from '../components/Header/header';
 import paws from '../img/paws.png'
 import arrowLeft from '../img/arrowLeft.png'
 import RelatedProduct from '../components/Product/relatedProduct';
-import {petProducts} from '../data/data'
+// import {petProducts} from '../data/data'
 
 
-const PetProduct = ({onAdd,data}) => {
+const PetProduct = ({href,onAdd,data}) => {
 
     const cartItems= useContext(AddContext);
 
     const {id} = useParams();
     const prdID=id;
-    let result = data.find( ({ petProductID }) => petProductID === parseInt(prdID) ) || data.find( ({ petServiceID }) => petServiceID === parseInt(prdID) ) || data.find( ({ petFoodID }) => petFoodID === parseInt(prdID) ) || data.find( ({ petID }) => petID === parseInt(prdID) ) ;
-    // let result = data[0];
-    // let result = data.find(element => element.petProductID ===prdID)
+    let result = data.find( ({ id }) => id === parseInt(prdID) ) ;
+
     let relatedPrd=[];
 
     for(var i=0;i<4;i++){
+        if(data[i])
         relatedPrd.push(data[i]);
     }
 
@@ -38,12 +38,12 @@ const PetProduct = ({onAdd,data}) => {
                 <div className="flex flex-col ">
                     <div className="p-4">
                         <p className="font-extrabold text-3xl">{result.name}</p>
-                        <p className="text-gray-700">Monday – Sunday / 8:00am – 6:00pm</p>
+                        <p className="text-gray-700">Sẵn sàng giao hàng từ: Thứ 2 – Chủ nhật / 8:00am – 6:00pm</p>
                     </div>
                     <div className="flex flex-col  rounded-xl gap-y-2 text-left max-w-lg p-4">
-                        <p className="font-extrabold text-2xl">{result.unitPrice}</p>
-                        <b>Detail:</b>
-                        <p className="text-lg md:text-normal">Free Standard Shipping with any online purchase of $50 (merchandise subtotal excludes store pick up items; merchandise subtotal is calculated before sales tax, before gift wrap charges, and after any discounts or coupons). Truck delivery and shipping surcharges on over-sized or extremely heavy items will still apply</p>
+                        <p className="font-extrabold text-2xl">{result.unitPrice} VND</p>
+                        <b>Thông tin giao hàng:</b>
+                        <p className="text-lg md:text-normal">Phí giao hàng được miễn phí với mọi mặt hàng trên website PetMama. Phụ phí giao hàng và vận chuyển bằng xe tải đối với các mặt hàng quá khổ hoặc quá nặng sẽ vẫn được áp dụng</p>
                         <button onClick={()=>{onAdd(result)}} className="text-black bg-sky-300 rounded-2xl font-semibold w-fit p-4 md:p-2 px-8 md:px-4 hover:bg-sky-400">Add to cart</button>
 
                     </div>
@@ -91,13 +91,13 @@ const PetProduct = ({onAdd,data}) => {
 
             {/* related products */}
             <div className="flex flex-col mx-auto gap-y-4 justify-center items-center">
-            <p className="text-2xl font-extrabold ">Related products</p>
+            <p className="text-2xl font-extrabold ">Sản phẩm liên quan</p>
 
             <div className="flex flex-row flex-wrap gap-x-8 gap-y-8 mx-auto justify-center ">
 
                 {
                     relatedPrd.map((product,key)=>(
-                        <RelatedProduct product={product} key={key}/>
+                        <RelatedProduct href={href} product={product} key={key}/>
                     ))
                 }
 

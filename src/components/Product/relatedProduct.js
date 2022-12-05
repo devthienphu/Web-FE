@@ -9,11 +9,11 @@ const RelatedProduct = ({href,product}) => {
     return (
         <>
             <div className="product-item flex flex-col relative gap-y-2 rounded-xl border border-gray-300 max-w-[350px] p-3 cursor-pointer hover:shadow-lg"
-                onClick={()=>{navigate(`/${href}/${product.petFoodID || product.petServiceID || product.petProductID}`)}}>
+                onClick={()=>{navigate(`/${href}/${product.id}`)}}>
                 <div className="flex flex-row justify-end">
-                    <img className="w-5 h-5 cursor-pointer " src={heartIcon} alt="icon"/>
+                    <img className="w-5 h-5 cursor-pointer" src={heartIcon} alt="icon"/>
                 </div>
-                <img className="rounded-xl max-w-[350px] min-w-[250px] max-h-[320px] h-[320px] object-cover" src={product.imageUrl} alt="prd"/>
+                <img className="rounded-xl max-w-[350px] min-w-[250px] w-[300px] max-h-[320px] h-[320px] object-cover" src={product.imageUrl} alt="prd"/>
                 <p className="font-semibold text-sm">{product.name}</p>
                 <p className="font-bold text-xl">{product.unitPrice} VND</p>
                 <div className="flex flex-row justify-end">

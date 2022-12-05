@@ -14,32 +14,32 @@ import 'swiper/css/pagination';
 const sliderList = [
     {
     id:1,
-    content :'THE PERFECT PETS AWAITS YOUS',
-    secondaryContent :'LABRADOR',
+    content :'NHỮNG THÚ CƯNG CỰC DỄ THƯƠNG',
+    secondaryContent :'TRẮNG MUỐT',
     thirContent :'So cute!',
-    discount :'20% | DISCOUNT UPON',
+    discount :'HÃY MUA NGAY',
     buttonContent:'Mua ngay',
     image:slide1
     },
   
     {
-    id:2,
-    content :'THE BEST CUISINE AWAITS YOUS',
-    secondaryContent :'Best food',
-    thirContent :'Healthy food',
-    discount :'20% | DISCOUNT UPON',
-    buttonContent:'Register',
-    image:slide2
+        id:1,
+        content :'NHỮNG THÚ CƯNG CỰC DỄ THƯƠNG',
+        secondaryContent :'VÀNG ÓNG',
+        thirContent :'So cute!',
+        discount :'HÃY MUA NGAY',
+        buttonContent:'Mua ngay',
+        image:slide2
     },
   
     {
-      id:3,
-      content :'THE BEST CUISINE AWAITS YOUS',
-      secondaryContent :'Welcome!',
-      thirContent :'To my food',
-      discount :'20% | DISCOUNT UPON',
-      buttonContent:'Register',
-      image:slide3
+        id:1,
+        content :'NHỮNG THÚ CƯNG CỰC DỄ THƯƠNG',
+        secondaryContent :'MÈO NÈ',
+        thirContent :'So cute!',
+        discount :'HÃY MUA NGAY',
+        buttonContent:'Mua ngay',
+        image:slide3
     },
       
   ]
@@ -66,7 +66,7 @@ const Slider = () => {
                         <h3 className="text-gray-600 text-green-500 p-2">{slider.content}</h3>
                         <h2 className="font-medium text-5xl p-2">{slider.secondaryContent}</h2>
                         <h2 className="font-bold text-5xl p-2">{slider.thirContent}</h2>
-                        <h3 className="font-bold text-3xl text-pink-400 p-4">{slider.discount}</h3>
+                        <h3 className="font-bold text-2xl text-pink-400 p-3">{slider.discount}</h3>
                         <button className="mt-2 ml-2 whitespace-nowrap w-32 inline-flex items-center justify-center 
                         px-4 py-2 border border-transparent rounded-3xl shadow-sm text-base font-medium text-white bg-sky-400 hover:bg-sky-500">
                             {slider.buttonContent}</button>
